@@ -32,7 +32,7 @@ Feel free to explore the repository to:
 ## Contact
 If you have questions or collaboration ideas, you can reach me via:
 - **Email:** ammaryasserm7@gmail.com
-- **LinkedIn:** http://127.0.0.1:3000/enhance.html
+- **LinkedIn:** https://www.linkedin.com/in/ammaryasserr/
 
 ---
 
@@ -72,7 +72,7 @@ Feel free to explore the repository to:
 ## Contact
 If you have questions or collaboration ideas, you can reach me via:
 - **Email:** ammaryasserm7@gmail.com
-- **LinkedIn:** http://127.0.0.1:3000/enhance.html
+- **LinkedIn:** https://www.linkedin.com/in/ammaryasserr/
 
 ---
 
