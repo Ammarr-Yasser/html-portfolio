@@ -16,6 +16,7 @@
             --primary-cyan: #00b4d8;
             --secondary-cyan: #0077b6;
             --accent-green: #00f5ff;
+            --navbar-bg: rgba(10, 11, 30, 0.95);
             --text-primary: #ffffff;
             --text-secondary: #b8c4ce;
             --text-muted: #8892b0;
@@ -337,7 +338,7 @@
 
         /* Enhanced Cards with animations */
         .card {
-            background: var(--gradient-secondary) !important;
+            background: var(--navbar-bg);
             border: 1px solid var(--border-subtle) !important;
             border-radius: 16px !important;
             backdrop-filter: blur(20px);
@@ -423,7 +424,7 @@
 
         /* Timeline animations */
         .timeline-item {
-            background: var(--gradient-secondary);
+            background: var(--navbar-bg);
             border: 1px solid var(--border-subtle);
             border-radius: 16px;
             backdrop-filter: blur(20px);
@@ -789,6 +790,20 @@
             opacity: 1;
             transform: translateY(0);
         }
+    
+        /* Experience cards: compact-by-default, expand on "Show More" */
+        #experience .timeline-item {
+            max-width: 820px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: max-width 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+            transform: scale(0.995);
+        }
+        #experience .timeline-item.expanded {
+            max-width: 100%;
+            transform: scale(1);
+        }
+
     </style>
 </head>
 <body>
@@ -928,7 +943,7 @@
             
             <!-- e& Internship -->
             <div class="card mb-4 timeline-item shadow-lg" 
-                 style="background: linear-gradient(145deg, rgba(15,25,45,0.95), rgba(20,40,70,0.95)); 
+                 style=" 
                         border-left: 5px solid #00ffff; 
                         border-radius: 15px; 
                         overflow: hidden;" 
@@ -1002,7 +1017,7 @@
             </div>
 <!-- ITI Training -->
 <div class="card mb-4 timeline-item shadow-lg" 
-     style="background: linear-gradient(145deg, rgba(15,25,45,0.95), rgba(30,50,80,0.95)); 
+     style=" 
             border-left: 5px solid #00ffff; 
             border-radius: 15px; 
             overflow: hidden;" 
@@ -1076,7 +1091,7 @@
 
             <!-- DEPI Training -->
             <div class="card mb-4 timeline-item shadow-lg" 
-                 style="background: linear-gradient(145deg, rgba(15,25,45,0.95), rgba(30,50,80,0.95)); 
+                 style=" 
                         border-left: 5px solid #00ffff; 
                         border-radius: 15px; 
                         overflow: hidden;" 
@@ -1175,7 +1190,7 @@
 
             <!-- Telecom Egypt (WE) Training -->
             <div class="card mb-4 timeline-item shadow-lg" 
-                 style="background: linear-gradient(145deg, rgba(15,25,45,0.95), rgba(30,50,80,0.95)); 
+                 style=" 
                         border-left: 5px solid #00ffff; 
                         border-radius: 15px; 
                         overflow: hidden;" 
@@ -1322,7 +1337,7 @@
         <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="200">
             <div class="col-lg-8">
                 <div class="card shadow-lg" 
-                     style="background: linear-gradient(145deg, rgba(15,25,45,0.95), rgba(30,50,80,0.95)); border-radius: 15px; overflow: hidden;">
+                     style=" border-radius: 15px; overflow: hidden;">
                     
                     <div class="card-body p-4">
                         <!-- Header -->
@@ -1449,7 +1464,23 @@
     </a>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js">
+        // Experience card width animation: expand card when its details are shown
+        document.querySelectorAll('#experience .toggle-btn').forEach(button => {
+            const targetId = button.getAttribute('data-bs-target');
+            const targetEl = document.querySelector(targetId);
+            const card = button.closest('.timeline-item');
+            if (!targetEl || !card) return;
+
+            targetEl.addEventListener('shown.bs.collapse', () => {
+                card.classList.add('expanded');
+            });
+            targetEl.addEventListener('hidden.bs.collapse', () => {
+                card.classList.remove('expanded');
+            });
+        });
+
+    </script>
     <!-- AOS Animation Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
