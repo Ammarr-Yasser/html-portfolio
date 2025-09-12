@@ -61,7 +61,8 @@ network security, and cybersecurity incident response. This portfolio demonstrat
 - **Icons & Fonts:** Font Awesome, Google Fonts  
 
 ## Live Demo
-You can view the portfolio live here: [http://127.0.0.1:3000/enhance.html](https://aymms.github.io/html-portfolio/)
+You can view the portfolio live here: [Ammar Yasser
+Cybersecurity Engineer](https://aymms.github.io/html-portfolio/)
 
 ## How to Use
 Feel free to explore the repository to:
